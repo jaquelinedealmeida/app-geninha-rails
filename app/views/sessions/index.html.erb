@@ -4,7 +4,9 @@
 <ul>
     <% @sessions.each do |session| %>
         <li>
-            <%= session.title %>
+            <a href="/sessions/<%= session.id%>">
+                <%= session.title %>
+            </a>
         </li>
     <% end%>
 </ul>
