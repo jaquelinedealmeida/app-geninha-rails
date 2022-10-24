@@ -1,6 +1,11 @@
 <h1> GENINHA CARE </h1>
+<h3> Psychological Care</h3>
 
-<h2> Psychological Care</h2>
-<h3> Schedule your session</h3>
-#<input type = "datetime-local">
+<ul>
+    <% @sessions.each do |session| %>
+        <li>
+            <%= session.title %>
+        </li>
+    <% end%>
+</ul>
 
