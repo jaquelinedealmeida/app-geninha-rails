@@ -1,0 +1,18 @@
+<h1> New Article</1>
+
+<% form_with model: @session do |form| %>
+    <div>
+        <%= form.label :tittle %><br>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :timetable %><br>
+        <%= form.datetime_select :timetable %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
+    
