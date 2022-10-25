@@ -1,12 +1,12 @@
 <h1> GENINHA CARE </h1>
-<h3> Psychological Care</h3>
+<h2> Psychological Care</h2>
+
+<h3>Schudule your sessions</h3>
 
 <ul>
     <% @sessions.each do |session| %>
         <li>
-            <a href="/sessions/<%= session.id%>">
-                <%= session.title %>
-            </a>
+            <%=link_to session.title, session %>
         </li>
     <% end%>
 </ul>
