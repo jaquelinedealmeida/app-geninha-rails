@@ -1,0 +1,21 @@
+<% form_with model: session do |form| %>
+    <div>
+       <%= form.label :title %><br>
+       <%= form.text_field :title %>
+       <% session.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+    </div>
+
+    <div>
+        <%= form.label :timetable %><br>
+        <% form.datetime_select :timetable %><br>
+        <% session.errors.full_messages_for(:timetable).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+    <% end %>
