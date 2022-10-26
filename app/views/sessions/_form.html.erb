@@ -1,21 +1,21 @@
-<% form_with model: session do |form| %>
+<%= form_with model: session do |form| %>
     <div>
-       <%= form.label :title %><br>
-       <%= form.text_field :title %>
+       <%= form.label :title %><br><br>
+       <%= form.text_field :title %><br><br><br>
        <% session.errors.full_messages_for(:title).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
+            <div><%= message %></div>
+        <% end %>
     </div>
 
     <div>
-        <%= form.label :timetable %><br>
-        <% form.datetime_select :timetable %><br>
-        <% session.errors.full_messages_for(:timetable).each do |message| %>
+        <%= form.label :date %><br><br>
+        <%= form.datetime_select :date %><br><br><br>
+        <% session.errors.full_messages_for(:date).each do |message| %>
             <div><%= message %></div>
-            <% end %>
+        <% end %>
     </div>
 
     <div>
         <%= form.submit %>
     </div>
-    <% end %>
+<% end %>

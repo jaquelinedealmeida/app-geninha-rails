@@ -22,11 +22,11 @@ class SessionsController < ApplicationController
   end
 
   def edit 
-    @session = Session.fin(params[:id])
+    @session = Session.find(params[:id])
   end 
 
   def update 
-    @session = Session.find(params[id])
+    @session = Session.find(params[:id])
 
     if @session.update(session_params)
       redirect_to @session
@@ -35,8 +35,15 @@ class SessionsController < ApplicationController
     end
   end   
 
+  def destroy 
+    @session = Session.find(params[:id])
+    @session.destroy
+
+    redirect_to root_path, status: :see_other
+  end 
+
   private 
     def session_params 
-      params.require(:article).permit(:title, :timetable)
+      params.require(:session).permit(:title, :timetable)
     end 
 end

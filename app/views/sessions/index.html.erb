@@ -6,9 +6,9 @@
 <ul>
     <% @sessions.each do |session| %>
         <li>
-            <%=link_to session.title, session %>
+            <%= link_to session.title, session %>
         </li>
-    <% end%>
+    <% end %>
 </ul>
 
 <%= link_to "New Session", new_session_path %>
