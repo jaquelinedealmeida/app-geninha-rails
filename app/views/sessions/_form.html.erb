@@ -1,17 +1,17 @@
 <%= form_with model: session do |form| %>
     <div>
-       <%= form.label :title %><br><br>
-       <%= form.text_field :title %><br><br><br>
+      <h4><%= form.label :title %><br><br></h4>
+       <%= form.text_field :title %><br><br>
        <% session.errors.full_messages_for(:title).each do |message| %>
-            <div><%= message %></div>
+            <div><%= message %></div><br>
         <% end %>
     </div>
 
     <div>
-        <%= form.label :date %><br><br>
-        <%= form.datetime_select :date %><br><br><br>
+        <h4><%= form.label :date %><br><br></h4>
+        <%= form.datetime_select :date, { ampm: true, order: [:day, :month, :year] }, { class: "form-control" }%><br><br><br>
         <% session.errors.full_messages_for(:date).each do |message| %>
-            <div><%= message %></div>
+            <div><%= message %></div><br><br>
         <% end %>
     </div>
 

@@ -42,8 +42,20 @@ class SessionsController < ApplicationController
     redirect_to root_path, status: :see_other
   end 
 
+  def utc
+    utc = new_offset(0)
+
+    Time.utc(
+      utc.year, utc.month, utc.day,
+      utc.hour, utc.min, utc.sec + utc.sec_fraction
+    )
+  end
+  alias_method :getgm, :utc
+  alias_method :getutc, :utc
+  alias_method :gmtime, :utc
+
   private 
     def session_params 
-      params.require(:session).permit(:title, :timetable)
+      params.require(:session).permit(:title, :date)
     end 
 end
