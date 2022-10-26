@@ -10,6 +10,20 @@
                     { turbo_method: :delete,
                         turbo_confirm: "Are you sure?" ,
                     } %></li>
-                     
-
 </ul>
+
+<h2> 🧑🏾‍⚕️ Add a participant </h2>
+<%= form_with model: [ @session, @session.participants.build ] do |form| %>
+    <p> 
+        <%= form.label :participant %><br>
+        <%= form.text_field :participant %>
+    </p>
+    <p>
+        <%= form.label :role %><br>
+        <%= form.text_field :role %>
+    </p>
+
+<p>    
+    <%= form.submit %>
+</p>
+<% end %>
