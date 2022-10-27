@@ -1,0 +1,14 @@
+<%= form_with model: [ @session, @session.participants.build ] do |form| %>
+    <p> 
+        <%= form.label :participant %><br>
+        <%= form.text_field :participants %>
+    </p>
+    <p>
+        <%= form.label :role %><br>
+        <%= form.text_field :role %>
+    </p>
+
+    <p>    
+        <%= form.submit %>
+    </p>
+<% end %>
