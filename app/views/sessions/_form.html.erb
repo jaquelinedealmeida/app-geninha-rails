@@ -19,8 +19,15 @@
         <%= form.submit %>
     </div>
 
+    <br> 
     <div>
-        <%= form.label :status %><br>
+        <%= form.label :status %><br><br>
         <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
     </div>
 <% end %>
+
+<ul>
+
+<li><%= link_to "Back", root_path(@session) %></li>
+
+</ul>
