@@ -3,11 +3,15 @@
 
 <h3>Schedule your sessions 📅 </h3>
 
+Our blog has <%= Participant.public_count %> participants!
+
 <ul>
     <% @sessions.each do |session| %>
-        <li>
-            <%= link_to session.title, session %>
-        </li>
+        <% unless session.archived? %>
+            <li>
+                 <%= link_to session.title, session %>
+            </li>
+        <% end %>
     <% end %>
 </ul>
 

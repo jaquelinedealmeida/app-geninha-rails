@@ -1,9 +1,23 @@
-<p>
-    <strong>Participants:</strong>
-    <%= participant.participants%>
-</p>
 
-<p>
-    <strong>Role:</strong>
-    <%= participant.role%>
-</p>
+<% unless participant.archived? %>
+    <p>
+      <strong>Participants:</strong>
+      <%= participant.participants%>
+    </p>
+
+
+    <p>
+      <strong>Role:</strong>
+      <%= participant.role%>
+    </p>
+
+
+    <p> 
+        <%= link_to 'Delete participant', [participant.session, participant], data:
+                    { turbo_method: :delete,
+                        turbo_confirm: "Are you sure?" ,
+                    } %>
+    </p>
+<% end %>
+    <br>
+
