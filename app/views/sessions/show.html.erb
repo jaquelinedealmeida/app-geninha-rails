@@ -1,26 +1,25 @@
-<h3>👧🏽 <%= @session.title %></h3>
+<h2>👧🏽 <%= @session.title %></h2>
 
 <h4> ✐ Anote o seu horario de atendimento:</h4>
 
-<%= @session.date %><br><br>
+<%= @session.date.strftime("%A - %d/%m/%Y - %H:%M" )%><br><br>
 
 <ul>
+    <li><%= link_to "Edit", edit_session_path(@session)%></li>
     <li><%= link_to "Delete", session_path(@session), data:
         { turbo_method: :delete,
         turbo_confirm: "Are you sure?" ,
         } %></li>
 </ul>
 
-<h2>Participantion</h2>
+<h3> 👥 Participation</h3>
 <%= render @session.participants %>
 
 <h2> 🧑🏾‍⚕️ Add a participant </h2>
 <%= render 'participants/form' %>
 
-<ul> 
-    <li><%= link_to "Edit", edit_session_path(@session) %></li>
-    
+
+<ul>  
     <li><%= link_to "Back", new_session_path(@session) %></li>
-    
 </ul>
 

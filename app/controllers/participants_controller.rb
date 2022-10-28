@@ -8,6 +8,7 @@ class ParticipantsController < ApplicationController
         redirect_to session_path(@session)
     end
 
+
     def destroy
         @session = Session.find(params[:session_id])
         @participant = @session.participants.find(params[:id])
